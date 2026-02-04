@@ -1,0 +1,349 @@
+/* =========================
+   RESET Y BASE
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   FONDO GENERAL (GLOBAL)
+========================= */
+body {
+    background: linear-gradient(180deg, #0f0f14, #1a1a24);
+    color: #eaeaea;
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #b23a6f;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    color: #cfcfcf;
+}
+
+/* =========================
+   CARDS (INDEX 1 Y FINAL)
+========================= */
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f1b6c8;
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* =========================
+   LISTA DE TEXTO (INDEX 1)
+========================= */
+.text-list {
+    padding-left: 20px;
+}
+
+.text-list li {
+    margin-bottom: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* =========================
+   BOTONES GENERALES
+========================= */
+.button-group,
+.final-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* CLOSE */
+.btn.close {
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+}
+
+.btn.close:hover {
+    background: #c62828;
+    border-color: #c62828;
+    color: #fff;
+}
+
+/* NEXT */
+.btn.next {
+    border: 2px solid #b23a6f;
+    color: #b23a6f;
+}
+
+.btn.next:hover {
+    background: #f1b6c8;
+    color: #1a1a24;
+}
+
+/* =========================
+   HISTORIA (INDEX 2)
+========================= */
+.story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.story.left {
+    flex-direction: row;
+}
+
+.story.right {
+    flex-direction: row-reverse;
+}
+
+.story-text {
+    width: 48%;
+    background: rgba(255,255,255,0.05);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+}
+
+.story-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f1b6c8;
+    margin-bottom: 10px;
+}
+
+.story-text p {
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+/* Primera frase descriptiva */
+.story-text p:first-of-type {
+    color: #b9b9c6;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   IMÁGENES
+========================= */
+.story-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.story-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   FINAL CARD (Y HOY…)
+========================= */
+.final-card {
+    background: linear-gradient(135deg, #3a1025, #1b1320);
+    border: 1px solid rgba(241, 182, 200, 0.25);
+}
+
+.final-question {
+    margin-top: 20px;
+    font-size: 1.15rem;
+    color: #f1b6c8;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+
+/* =========================
+   BOTONES FINALES
+========================= */
+.btn-no {
+    border: 2px solid #ff7aa2;
+    background: #ff7aa2;
+    color: #1a1a24;
+}
+
+.btn-no:hover {
+    background: #c62828;
+    border-color: #c62828;
+    color: #fff;
+}
+
+.btn-yes {
+    border: 2px solid #7a5cff;
+    background: #7a5cff;
+    color: #fff;
+}
+
+.btn-yes:hover {
+    background: #f1b6c8;
+    border-color: #f1b6c8;
+    color: #1a1a24;
+}
+
+/* =========================
+   INTERACCIÓN
+========================= */
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover .story-text {
+    transform: translateX(6px);
+    transition: transform 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .story,
+    .story.left,
+    .story.right {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .story-text,
+    .story-image {
+        width: 100%;
+    }
+}
+
+.final-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Botón NO */
+.btn-no {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 2px solid #ff7aa2;
+    background: #ff7aa2;
+    color: #1a1a24;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-no:hover {
+    background: #c62828;
+    border-color: #c62828;
+    color: #fff;
+}
+
+/* Botón SÍ */
+.btn-yes {
+    padding: 12px 32px;
+    border-radius: 30px;
+    border: 2px solid #7a5cff;
+    background: #7a5cff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-yes:hover {
+    background: #f1b6c8;
+    border-color: #f1b6c8;
+    color: #1a1a24;
+}
+
+/* =========================
+   ANIMACIONES DE APARICIÓN
+========================= */
+
+/* Estado inicial */
+.story,
+.story-text,
+.story-image {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* Cuando aparece */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Entrada lateral sutil según lado */
+.story.left.show {
+    transform: translateX(-20px);
+}
+
+.story.right.show {
+    transform: translateX(20px);
+}
+
+.story.left.show,
+.story.right.show {
+    transform: translateX(0);
+}
+
+/* Imagen un poco más lenta */
+.story-image {
+    transition-delay: 0.2s;
+}

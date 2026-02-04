@@ -1,0 +1,320 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #0e0e14, #1a0f1f);
+    color: #eaeaea;
+    overflow-x: hidden;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #f1b6c8;
+    animation: fadeDown 1.2s ease forwards;
+}
+
+.hero-sub {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #d6a3b5;
+    max-width: 520px;
+    animation: fadeUp 1.4s ease forwards;
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+    max-width: 600px;
+    padding: 35px;
+    margin: 120px 0;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+
+    /* animación base */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+/* CARD IZQUIERDA */
+.card.left {
+    margin-left: 8%;
+    margin-right: auto;
+}
+
+/* CARD DERECHA */
+.card.right {
+    margin-right: 8%;
+    margin-left: auto;
+}
+
+/* CARD VISIBLE (activar con JS o scroll observer) */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TEXTO */
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f1b6c8;
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    text-align: left;
+}
+
+/* PRIMERA FRASE DESCRIPTIVA */
+.card p:first-of-type {
+    color: #b9b9c6;
+    font-style: italic;
+    margin-bottom: 18px;
+}
+
+/* =====================
+   FINAL
+===================== */
+.final-message {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 30px;
+}
+
+.final-message h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f1b6c8;
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+}
+
+.final-message p {
+    max-width: 520px;
+    line-height: 1.9;
+    color: #eaeaea;
+    font-size: 1.05rem;
+}
+
+/* =====================
+   ANIMACIONES
+===================== */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+    .card.left,
+    .card.right {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* CIERRE DE PANTALLA */
+#screen-close {
+    position: fixed;
+    inset: 0;
+    background: #0e0e14;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 1.6s ease;
+}
+
+#screen-close.active {
+    opacity: 1;
+}
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0e0e11;
+    color: #f2f2f2;
+}
+
+/* =========================
+   WRAPPER CARD + GIF
+========================= */
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* distancia exacta entre card y gif */
+    margin: 80px auto;
+    max-width: 1100px;
+    padding: 0 20px;
+}
+
+/* Dirección según lado */
+.card-wrapper.left {
+    flex-direction: row;
+}
+
+.card-wrapper.right {
+    flex-direction: row;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 30px 35px;
+    max-width: 520px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   GIF LATERAL
+========================= */
+.side-gif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px; /* espacio fijo para evitar desalineaciones */
+}
+
+.side-gif img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    opacity: 0.9;
+    animation: floatGif 6s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMACIÓN SUTIL
+========================= */
+@keyframes floatGif {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.hero-sub {
+    max-width: 600px;
+    opacity: 0.8;
+}
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+.final-message {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.final-message h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+.final-message p {
+    margin: 10px 0;
+}
+
+.final-message button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #ff6fae;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.final-message button:hover {
+    transform: scale(1.05);
+}

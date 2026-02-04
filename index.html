@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Advertencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #c0392b;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .checkbox {
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>⚠ Advertencia</h2>
+    <p>Antes de continuar, por favor lee y acepta las siguientes condiciones:</p>
+
+    <ul>
+        <li>El siguiente cpntenido puede ser sensible,observelo bajo su resposabilidad.</li>
+        <li>No compartas información relacionada al contenido de este sitio web.</li>
+        <li>Luego de salir de esta pagina,Este sitio web se autodestruirá 10 minutos despues del ultimo cierre.</li>
+        <li>Prohibido el acceso a personal no destinado al contenido de esta web, bajo pena de carcel y posible extorción</li>
+        <li>Los datos de personal no deseado seran almacenado en el repositorio del desarrollador (Hora de acceso, nombre y Dirección IP,Naveador usado, equipo utilizado) y podrán ser utilizado contra su voluntad sin acceso a tregua</li>
+    </ul>
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="acepto" onclick="habilitarBoton()">
+            Acepto los términos y condiciones
+        </label>
+    </div>
+
+    <button id="continuar" disabled onclick="location.href='indexy.html'">
+    Continuar
+</button>
+
+</div>
+
+<script>
+    function habilitarBoton() {
+        const check = document.getElementById("acepto");
+        const boton = document.getElementById("continuar");
+        boton.disabled = !check.checked;
+    }
+</script>
+
+</body>
+</html>
